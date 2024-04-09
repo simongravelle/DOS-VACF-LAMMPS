@@ -2,7 +2,11 @@
 
 ## Theory
 
+The density of state (DoS) has units of time and reads [1]
+
 $$ S(\nu) = \dfrac{2}{k_\text{B} T} \sum_{j = 1}^N \sum_{k = 1}^3 s_j^k (\nu) $$
+
+where 
 
 Python script for calculating the vibrational density of states (DOS) from LAMMPS dump file.
 
@@ -29,3 +33,7 @@ An example of calculation can be found in the Notebook [calculateDOS](calculateD
 ## Sources
 
 Inspired by [dump2VDOS](https://zenodo.org/records/10573320), please cite them if you use this script.
+
+## Reference
+
+[1] Lin, Blanco, and Goddard, J. Chem. Phys., 2003, 119, 22 
