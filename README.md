@@ -18,13 +18,14 @@ where $c_j^k$ is the velocity autocorrelation of atom $j$ in the $k$ direction:
 
 $$ c_j^k = \left< v_j^k (t) v_j^k (t + \tau) \right>. $$
 
-The total velocity autocorrelation function $C(t)$ is the mass weighted sum of the atom velocity autocorrelation functions, it has the units of mass distance$^2$ / time, and reads
+$c_j^k$ has the units of distance^2 / time^2.
+The total velocity autocorrelation function $C(t)$ is the mass weighted sum of the atom velocity autocorrelation functions, it has the units of mass distance^2 / time, and reads
 
 $$ C(t) = \sum_{j = 1}^N \sum_{k = 1}^3 m_j c_j^k (t). $$
 
 $S(\nu)$ can be obtained from the Fourier transform of $C(t)$,
 
-$$ S(\nu)$ = \dfrac{2}{k_B T} \text{FT} (C(t)).$$
+$$ S(\nu) = \dfrac{2}{k_B T} \text{FT} (C(t)).$$
 
 ## Example
 
