@@ -1,0 +1,46 @@
+# LAMMPS input script by Simon Gravelle
+
+include parameters.lammps
+
+units real
+dimension 3
+atom_style full
+pair_style lj/cut 10
+boundary p p p
+
+region simulation_box block 0 ${L} 0 ${L} 0 ${L}
+create_box 1 simulation_box
+create_atoms 1 random ${n_part} ${rdm1} simulation_box  overlap 2.0 maxtry 200
+
+mass 1 ${mass}
+pair_coeff 1 1 ${epsilon} ${sigma}
+
+thermo 100
+
+minimize 1.0e-4 1.0e-6 1000 10000
+reset_timestep 0
+
+thermo 1000
+
+velocity all create ${T} ${rdm2} rot yes mom yes dist gaussian
+fix mynve all nve
+fix mylan all langevin ${T} ${T} 5 ${rdm3}
+fix mymom all momentum 1000 linear 1 1 1
+
+timestep ${dt}
+run 10000
+reset_timestep 0
+unfix mymom
+unfix mylan
+
+run 10000
+reset_timestep 0
+
+dump mydmp all atom 1000 dump.lammpstrj
+thermo 10000
+
+group LJ type 1
+dump mydmp1 LJ custom 5 dump.lammpsvel vx vy vz
+dump_modify mydmp1 sort id
+
+run 10000
