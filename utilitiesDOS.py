@@ -1,8 +1,5 @@
 import numpy as np
-
-def calculate_fft(autocorr, timestep):
-    """Calculate FFT of autocorrelation function."""
-    return np.fft.rfft(autocorr)*timestep
+from scipy import constants as cst
 
 def calculate_autocorr(X, N):
     """Calculate autocorrelation."""
@@ -57,3 +54,27 @@ def read_dump(file):
     content.close()
     printing_period = np.diff(steps_array)[0]
     return data, n_atoms, n_frames, n_columns, printing_period
+
+def calculate_fft(time, input):
+    """
+    Calculate the Fourier transform of an array.
+
+    Wrap function that takes the data in real space with
+    columns time, frequency and returns the data in Fourier space
+    with columns frequency, signal
+
+    Units in : ps, signal
+    Units out : MHz, ps*signal
+
+    **Parameters**
+
+    data : numpy.ndarray
+
+    **Returns**
+
+    np.ndarray
+    """
+    dt = (time[1] - time[0]) * cst.pico  # second
+    freq = np.fft.rfftfreq(len(input), dt) / cst.mega
+    output = np.fft.rfft(input) * dt * 2 / cst.pico
+    return np.vstack((freq, np.abs(output))).T

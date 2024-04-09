@@ -18,6 +18,10 @@ An example of calculation can be found in the Notebook [calculateDOS](calculateD
 
 ![illustration](figures/vacf-light.png#gh-light-mode-only)
 
+![illustration](figures/dos-dark.png#gh-dark-mode-only)
+
+![illustration](figures/dos-light.png#gh-light-mode-only)
+
 ## Sources
 
 Inspired by [dump2VDOS](https://zenodo.org/records/10573320), please cite them if you use this script.
