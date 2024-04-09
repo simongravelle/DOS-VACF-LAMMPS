@@ -1,5 +1,9 @@
 # LAMMPS input script by Simon Gravelle
 
+variable rdm1 equal 45800
+variable rdm2 equal 78654
+variable rdm3 equal 16070
+
 include parameters.lammps
 
 units real

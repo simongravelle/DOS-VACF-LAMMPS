@@ -52,7 +52,7 @@ def create_parameter_lammps_file(rho_star, T_star, verbose = False):
     f.write("variable epsilon equal " + str(epsilon.magnitude) + " # " + str(epsilon.units) + "\n")
     f.write("\n")
     f.write("# Simulation parameters \n")
-    f.write("variable dt equal " + str(timestep.magnitude) + " # " + str(timestep.units) + "\n")
+    f.write("variable dt equal " + str(np.round(timestep.magnitude,2)) + " # " + str(timestep.units) + "\n")
     f.write("variable n_part equal " + str(particule_number) + "\n")
     f.write("variable L equal " + str(actual_L.magnitude) + " # " + str(actual_L.units) + "\n")
     f.write("variable T equal " + str(T.magnitude) + " # " + str(T.units) + "\n")

@@ -6,9 +6,7 @@ variable sigma equal 3 # angstrom
 variable epsilon equal 0.1 # kilocalorie / mole
 
 # Simulation parameters 
-variable dt equal 2.3189715528866484 # femtosecond
+variable dt equal 2.32 # femtosecond
 variable n_part equal 850
 variable L equal 30 # angstrom
-variable L_up equal 15.0 # angstrom
-variable L_down equal -15.0 # angstrom
 variable T equal 55.354 # kelvin

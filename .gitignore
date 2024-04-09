@@ -1,3 +1,4 @@
 **/log.lammps
 **/dump.lammpstrj
 **/dump.lammpsvel
+**/*.pyc
