@@ -5,7 +5,7 @@ import numpy as np
 from pint import UnitRegistry
 ureg = UnitRegistry()
 
-def create_parameter_lammps_file(rho_star, temperature, verbose = False):
+def create_parameter_lammps_file(rho_star, T_star, verbose = False):
     """Create LAMMPS parameter file compatible with real unit system.
     
     The non-dimensionalized density rho_start and temperature T_star must be specified."""
@@ -17,11 +17,10 @@ def create_parameter_lammps_file(rho_star, temperature, verbose = False):
     sigma = 3 * ureg.angstrom # A
     epsilon = 0.1 * ureg.kcal / ureg.mol # kcal/mol
     mass = 1.0 * ureg.g / ureg.mol # g/mol
-    kB = 1.987204259e-3 * ureg.kcal / ureg.mol / ureg.K # kcal/mol/K
 
     # estimate the temperature in Kelvin
-    T_star = temperature
-    temp_pref = epsilon/kB
+    kB = 1.987204259e-3 * ureg.kcal / ureg.mol / ureg.K # kcal/mol/K
+    temp_pref = epsilon/kB # temperature prefactor
     T = np.round(temp_pref * T_star, 3) # K
 
     # tomestep
