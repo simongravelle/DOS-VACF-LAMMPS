@@ -25,7 +25,7 @@ def create_parameter_lammps_file(rho_star, T_star, verbose = False):
 
     # tomestep
     time_pref = np.sqrt(mass*sigma**2/epsilon)
-    timestep = 0.005 * time_pref # fs
+    timestep = 0.0025 * time_pref # fs
     timestep = timestep.to(ureg.fs)  # fs
 
     # volume_single_particle = np.pi * sigma**dim / 6

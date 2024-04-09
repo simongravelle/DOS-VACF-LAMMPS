@@ -47,4 +47,4 @@ group LJ type 1
 dump mydmp1 LJ custom 5 dump.lammpsvel vx vy vz
 dump_modify mydmp1 sort id
 
-run 10000
+run 100000
