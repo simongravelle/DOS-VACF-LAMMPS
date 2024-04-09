@@ -66,7 +66,7 @@ def calculate_fft(time, input):
     with columns frequency, signal
 
     Units in : ps, signal
-    Units out : MHz, ps*signal
+    Units out : Hz, s*signal
 
     **Parameters**
 
@@ -77,6 +77,6 @@ def calculate_fft(time, input):
     np.ndarray
     """
     dt = (time[1] - time[0]) * cst.pico  # second
-    freq = np.fft.rfftfreq(len(input), dt) / cst.mega
-    output = np.fft.rfft(input) * dt * 2 / cst.pico
+    freq = np.fft.rfftfreq(len(input), dt)
+    output = np.fft.rfft(input) * dt * 2
     return np.vstack((freq, np.abs(output))).T
