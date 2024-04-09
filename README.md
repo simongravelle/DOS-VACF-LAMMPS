@@ -14,6 +14,10 @@ where `lmp` is your LAMMPS executable.
 
 An example of calculation can be found in the Notebook [calculateDOS](calculateDOS.ipynb).
 
+![illustration](figures/vacf-dark.png#gh-dark-mode-only)
+
+![illustration](figures/vacf-light.png#gh-light-mode-only)
+
 ## Sources
 
 Inspired by [dump2VDOS](https://zenodo.org/records/10573320), please cite them if you use this script.
