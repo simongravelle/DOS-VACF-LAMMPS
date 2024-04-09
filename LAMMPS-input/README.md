@@ -1,0 +1,1 @@
+The parameters here are meant to reproduce the data from *The two-phase model for calculating thermodynamic properties of liquids from molecular dynamics: Validation for the phase diagram of Lennard-Jones fluids*.
