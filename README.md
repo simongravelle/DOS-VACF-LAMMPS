@@ -2,7 +2,7 @@
 
 ## Theory
 
-$$ S(\nu) = \dfrac{2}{k_\text{B} T} $$
+$$ S(\nu) = \dfrac{2}{k_\text{B} T} \sum_{j = 1}^N \sum_{k = 1}^3 s_j^k (\nu) $$
 
 Python script for calculating the vibrational density of states (DOS) from LAMMPS dump file.
 
