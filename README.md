@@ -1,5 +1,9 @@
 # DOS and VACF from LAMMPS dump
 
+## Theory
+
+$$ S(\nu) = \dfrac{2}{k_\text{B} T} $$
+
 Python script for calculating the vibrational density of states (DOS) from LAMMPS dump file.
 
 An example of LAMMPS trajectory file can be obtained by running the LAMMPS input file contained
