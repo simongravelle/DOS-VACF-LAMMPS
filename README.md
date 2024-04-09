@@ -6,5 +6,6 @@ An example of LAMMPS trajectory file can be optained by running the LAMMPS input
 within the LAMMPS-input/ folder. Run the lammps input file using:
 
 ```bash
-    mpirun-np8${lmp} -ininput.lammps-varrdm1 $RANDOM -varrdm2 $RANDOM -varrdm3 $RANDOM
+    mpirun -np 8 lmp -in input.lammps -var rdm1 $RANDOM -var rdm2 $RANDOM -var rdm3 $RANDOM
 ```
+where `lmp` is your LAMMPS executable.
