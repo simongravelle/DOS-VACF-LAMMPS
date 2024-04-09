@@ -44,7 +44,7 @@ dump mydmp all atom 1000 dump.lammpstrj
 thermo 10000
 
 group LJ type 1
-dump mydmp1 LJ custom 5 dump.lammpsvel vx vy vz
+dump mydmp1 LJ custom 5 dump.lammpsvel mass vx vy vz
 dump_modify mydmp1 sort id
 
 run 100000

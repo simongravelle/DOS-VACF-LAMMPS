@@ -37,8 +37,9 @@ def read_dump(file):
     """Read velocity from lammpstrj dump."""
     n_atoms, n_frames, n_columns, steps_array = detect_dump(file)
     content = open(file,'r')
-    data = np.ndarray((n_atoms, n_columns, n_frames),
+    data = np.ndarray((n_atoms, n_columns-1, n_frames),
                       dtype=float)
+    masses = np.ndarray(n_atoms, dtype=float)
     cpt = 0
     while (cpt < n_frames):
         for i in range(3):
@@ -49,11 +50,12 @@ def read_dump(file):
             _ = content.readline()        
         for a in range(n_atoms):
             line = content.readline().strip('\n').split()
-            data[a, :, cpt] = line    
+            data[a, :, cpt] = line[1:]
+            masses[a] = line[0]
         cpt += 1
     content.close()
     printing_period = np.diff(steps_array)[0]
-    return data, n_atoms, n_frames, n_columns, printing_period
+    return data, n_atoms, n_frames, n_columns, printing_period, masses
 
 def calculate_fft(time, input):
     """
