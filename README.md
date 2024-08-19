@@ -60,3 +60,7 @@ Inspired by [dump2VDOS](https://zenodo.org/records/10573320), please cite them i
 ## Reference
 
 [1] Lin, Blanco, and Goddard, J. Chem. Phys., 2003, 119, 22 
+
+## Acknowledgement
+
+S.G. acknowledges funding from the European Union's Horizon 2020 research and innovation programme under the Marie Skłodowska-Curie grant agreement N°101065060$, project NanoSep.
