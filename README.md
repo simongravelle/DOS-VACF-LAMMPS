@@ -1,4 +1,7 @@
-# DOS and VACF from LAMMPS dump [![DOI](https://zenodo.org/badge/784131738.svg)](https://zenodo.org/doi/10.5281/zenodo.13340970)
+[![DOI](https://zenodo.org/badge/784131738.svg)](https://zenodo.org/doi/10.5281/zenodo.13340970)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
+# DOS and VACF from LAMMPS dump
 
 Python script for calculating the vibrational density of states (DOS) from LAMMPS dump file.
 
